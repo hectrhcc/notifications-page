@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+--Red: hsl(1, 90%, 64%);
+--Blue: hsl(219, 85%, 26%);
+--White: hsl(0, 0%, 100%);
+--Very-light-grayish-blue: hsl(210, 60%, 98%);
+--Light-grayish-blue-1: hsl(211, 68%, 94%);
+--Light-grayish-blue-2: hsl(205, 33%, 90%);
+--Grayish-blue: hsl(219, 14%, 63%);
+--Dark-grayish-blue: hsl(219, 12%, 42%);
+--Very-dark-blue: hsl(224, 21%, 14%);
+
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url(./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+
+body{
+    font-family:'Plus Jakarta Sans';
+   
+}
+
+.main{
+    padding:24px  16px;
+}
+
+.notifications{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    max-width:770px;
+    & .title{ /*anidamiento  & representa el elemento padre*/
+        color:var(--Very-dark-blue);
+        font-weight:800;
+        font-size: 1.25em; 
+        word-spacing: 9px;
+    }
+    & .number{
+        border-radius: 6px;
+        background-color: var(--Blue);
+        color:var(--White);
+        width:32px;
+        height:25px;
+        display:inline-block;
+        text-align: center;
+    }
+    & .mark{
+        color: var(--Dark-grayish-blue);
+        font-size: 0.875em; /*14px % 16*/
+        font-weight: 500;
+        cursor: pointer;
+        &:hover{
+            color: var(--Blue);
+        }
+    }
+}
+
+.post{
+    background-color:var(--Very-light-grayish-blue) ;
+    border-radius: 8px;
+    display: flex;
+    gap:13px;
+    min-width: 343px;
+    padding: 16px;
+    font-size: 0.875em;
+    cursor: pointer;
+    color:var(--Dark-grayish-blue);
+    margin: 0 auto 10px;
+    position: relative;
+    & .image{
+        width:39px;
+        height:39px;
+    }
+    & .name{
+        font-weight: bold;
+        color:var(--Very-dark-blue);
+        &:hover{
+            color:var(--Blue);
+        }
+    }
+
+    & .reaction{
+        font-weight: bold;
+        &:hover{
+            color:var(--Blue);
+        }
+    }
+    & .time{
+    color:var(--Grayish-blue);
+    font-size: 0.875em;
+    font-weight: 500;
+    }
+    & .group{
+        color: var(--Blue);
+        font-weight: bold;
+    }
+    & .message-container{
+        border: 1px solid var(--Light-grayish-blue-2);
+        border-radius: 5px;
+        padding: 16px;
+        margin-top: 12px;
+        &:hover{ /*& es message container*/
+            background-color: var(--Light-grayish-blue-1);
+    }
+    
+    }
+    & .picture{
+        width: 39px;
+        height: 39px;
+        position: absolute;
+        right:15px;
+    }
+}
+
+.not-read{
+background-color: var(--Red);
+width:8px;
+height:8px;
+display: inline-block;
+border-radius: 50%;
+margin-left: 8px;
+}
+
+.attribution { 
+    font-size:0.875em; 
+    text-align: center; 
+    margin-bottom:35px;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+
+
+
+
+
+/*
+@media (min-width: 768px) {
+    .main {
+        width: 730px;
+        background-color: pink;
+    }
+}
+
+@media (max-width: 1440px) {
+    .main {
+        background-color: green;
+        margin: 0 auto;
+    }
+}
+la conversion min width a >= y max-width <= no me funciona
+*/
+
+@media (width<768px) {
+    .main {
+      /* background-color: green;*/
+    }
+}
+
+@media (width>= 768px) {
+    .main {
+        width: 730px;
+        /*background-color: pink;*/
+        margin: 0 auto;
+    }
+
+    .post{
+        font-size: 1em;
+    }
+
+}
+/*esta va despues para que no se eclipse con la anterior
+
+@media (width>= 1440px) {
+    .main {
+/*        background-color: green;
+
+}
+}
+
+*/
+
+
